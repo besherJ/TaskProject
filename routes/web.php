@@ -18,6 +18,11 @@ use GuzzleHttp\Exception\GuzzleException;
 
 Route::get('/', function () {
 
+
+    if(Auth::check())
+    {
+      return redirect('welcome');
+    }
     return view('login');
 })->name('login');
 
